@@ -409,7 +409,7 @@ class MarkovSketch:
         state, time = event
         if state is not self.current_state:
             self.model.update(state, self.current_state, time-self.current_time)
-            self.current_time = state
+            self.current_state = state
             self.current_time = time
         # Otherwise, no new state, so no event has taken place...
         self.npoints += 1  # Update count of points seen so far
